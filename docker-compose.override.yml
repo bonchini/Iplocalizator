@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  mp.iplocalizator.webapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:4430;http://+:8080
+    ports:
+      - "8080"
+      - "4430"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

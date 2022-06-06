@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Metricas";
+    var distances = ViewBag.Distances;
+}
+<h1>@ViewData["Title"]</h1>
+
+<h3>Distancia mas cercana: @distances.ShortestDistance kms</h3>
+<h3>Distancia mas lejana: @distances.LongestDistance kms</h3>
+<h3>Distancia promedio: @distances.AverageDistance kms</h3>

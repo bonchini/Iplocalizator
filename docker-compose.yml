@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  mp.iplocalizator.webapi:
+    image: ${DOCKER_REGISTRY-}mpiplocalizatorwebapi
+    build:
+      context: .
+      dockerfile: MP.IPLocalizator.WebApi/Dockerfile
+    ports:
+    - "59552:4430"
+  redisDb: 
+        image: redis

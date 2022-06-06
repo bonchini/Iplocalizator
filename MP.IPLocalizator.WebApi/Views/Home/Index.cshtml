@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var ipData = ViewBag.IpData;
+}
+
+<div class="myform">
+    <h1 class="display-4">Localizador de ip</h1>
+
+    <form asp-action="LocalizeIp" method="get">   
+
+        <input name="ip" />
+        <div>
+            <p></p>
+            <button type="submit">Localizar</button>
+            <p></p>
+        </div>
+
+    </form>
+
+    @if(ipData != null)
+    {
+        <div>
+            <h3>Ip: @ipData.Ip</h3>
+            <h3>Fecha Actual: @ipData.ActualLocalDate</h3>
+            <h3>País: @ipData.Country</h3>
+            <h3>ISO Code: @ipData.IsoCode</h3>
+            <h3>Idiomas: @ipData.Languages</h3>
+            <h3>Moneda: @ipData.Currency</h3>
+            <h3>Hora: @ipData.CountryHours</h3>
+            <h3>Distancia Estimada: @ipData.EstimatedDistance</h3>
+        </div>
+    }
+</div>
